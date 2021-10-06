@@ -19,8 +19,7 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
-    fitted = model
-    #.fit(disp = -1)
+    fitted = model.fit(disp = -1)
     #print(fitted.summary())
     fc1, se1, conf1 = fitted.forecast(1828, alpha=0.05)  # 95% confidence
     fc_series1 = pd.DataFrame(fc1, index = pd.date_range(start = pd.to_datetime('today').date(), periods = 1828, freq='D'), columns = ['forecast'])
